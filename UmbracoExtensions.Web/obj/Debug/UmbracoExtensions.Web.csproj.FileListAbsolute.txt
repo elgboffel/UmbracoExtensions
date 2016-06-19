@@ -129,3 +129,7 @@ C:\Users\Johnny Kristensen\Desktop\Sites\UmbracoExtensions\UmbracoExtensions.Web
 C:\Users\Johnny Kristensen\Desktop\Sites\UmbracoExtensions\UmbracoExtensions.Web\obj\Debug\UmbracoExtensions.Web.csprojResolveAssemblyReference.cache
 C:\Users\Johnny Kristensen\Desktop\Sites\UmbracoExtensions\UmbracoExtensions.Web\obj\Debug\UmbracoExtensions.Web.dll
 C:\Users\Johnny Kristensen\Desktop\Sites\UmbracoExtensions\UmbracoExtensions.Web\obj\Debug\UmbracoExtensions.Web.pdb
+C:\Users\Johnny Kristensen\Desktop\Sites\UmbracoExtensions\UmbracoExtensions.Web\bin\Our.Umbraco.PropertyEditorConverters.dll
+C:\Users\Johnny Kristensen\Desktop\Sites\UmbracoExtensions\UmbracoExtensions.Web\bin\Archetype.dll
+C:\Users\Johnny Kristensen\Desktop\Sites\UmbracoExtensions\UmbracoExtensions.Web\bin\Our.Umbraco.Picture.dll
+C:\Users\Johnny Kristensen\Desktop\Sites\UmbracoExtensions\UmbracoExtensions.Web\bin\Our.Umbraco.Picture.pdb
