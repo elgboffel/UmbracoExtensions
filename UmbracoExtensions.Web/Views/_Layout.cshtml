@@ -1,0 +1,50 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+  Layout = null;
+  
+  Html.RequiresCss("~/content/css/bootstrap.css", 1);
+  Html.RequiresCss("~/content/css/main.css", 2);
+  
+  Html.RequiresJsBundle("Core"); 
+  Html.RequiresJsBundle("App");
+  Html.RequiresJsBundle("Validate");
+}<!DOCTYPE html >
+<!-- 
+  Solution by
+  Datagraf Communications A/S
+  Jægergårdsgade 122 · 8000 Aarhus C
+  Havneholmen 33 · 1561 København V 
+  www.datagraf.dk
+  Tlf. +45 87 95 55 55
+-->
+<html lang="@Model.CurrentCulture.TwoLetterISOLanguageName" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Html.Raw(SEOChecker.Library.MetaData.Current.RenderTags())
+    @Html.CachedPartial("Shared/_Favicons", Model, 3600, false)    
+    @Html.CachedPartial("Shared/_OpenGraph", Model, 300, true)
+    <link rel="alternate" type="application/rss+xml" title="@CurrentPage._siteName" href="rss.xml" />
+    @Html.RenderCssHere()
+</head>
+<body>
+    @RenderBody()
+    <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.6.2.js"></script>
+    <script>typeof Modernizr == 'object' || document.write('<script src="~/content/components/modernizr-built/dist/modernizr.min.js" type="text/javascript"><\/script>')</script>
+    @* jQuery (necessary for Bootstrap's JavaScript plugins) *@
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="~/content/components/jquery/jquery.min.js" type="text/javascript"><\/script>')</script>
+    @* jQuery Migrate because we support ie9 below *@
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+    <script type="text/javascript">
+        if (typeof jQuery.migrateWarnings == 'undefined') { // or typeof jQuery.fn.live == 'undefined'
+            document.write('<script src="~/content/components/jquery-migrate/jquery-migrate.min.js" type="text/javascript"><\/script>');
+        }
+    </script>
+    @* Include all compiled plugins (below), or include individual files as needed *@
+    <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"></script>
+    <script>(typeof $().emulateTransitionEnd == 'function') || document.write('<script src="~/content/components/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
+    @Html.RenderJsHere()
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Use google to search your site -->
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+ <ShortName>[Name of the site]</ShortName>
+ <Description>Use Google to search [Name of site]</Description>
+ <Tags>[Name of site]</Tags>
+ <InputEncoding>UTF-8</InputEncoding>
+ <Url type="text/html" template="http://www.google.com/search?q=site:[Site host] {searchTerms}"/>
+</OpenSearchDescription>
+
+<!-- 
+Add the following meta to your layout
+<link rel="search" href="opensearch.xml" type="application/opensearchdescription+xml" title="[Site name]" />
+-->

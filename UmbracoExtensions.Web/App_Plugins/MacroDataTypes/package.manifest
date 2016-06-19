@@ -1,0 +1,15 @@
+﻿{
+	"propertyEditors": [
+		{
+			"alias": "TexteditorDataType",
+			"name": "Text Editor",
+			"isParameterEditor": true,
+			"editor": {
+				"view": "~/App_Plugins/MacroDataTypes/macro.rte-editor.html"
+			}
+		}
+	],
+	"javascript": [
+		"~/App_Plugins/MacroDataTypes/macro.rte-editor.controller.js"
+	]
+}

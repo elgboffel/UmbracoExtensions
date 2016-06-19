@@ -1,0 +1,8 @@
+﻿<div ng-controller="Datagraf.CharLimitEditorController">
+	<textarea ng-model="model.value" ng-change="limitChars()" rows="{{model.config.rows}}"
+			  class="umb-editor umb-textarea textstring form-control"></textarea>
+	<br />
+	
+	<span ng-bind="info" class="help-block"></span>
+	<span class="badge" ng-bind="infoLimit"></span>
+</div>

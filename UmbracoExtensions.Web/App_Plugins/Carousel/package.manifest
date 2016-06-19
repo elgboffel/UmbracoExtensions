@@ -1,0 +1,17 @@
+﻿{   
+    "propertyEditors": [      
+        {
+            "alias": "Our.Carousel",
+            "name": "Carousel",
+			"isParameterEditor": true,
+			"hideLabel": true,
+            "editor": {
+                "view": "~/App_Plugins/Carousel/carousel.html",
+				"valueType": "JSON"
+            }
+        }
+    ],
+    "javascript": [
+        "~/App_Plugins/Carousel/carousel.controller.js"
+    ]
+}

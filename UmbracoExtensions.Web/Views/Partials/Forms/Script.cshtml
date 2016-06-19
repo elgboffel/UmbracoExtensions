@@ -1,0 +1,20 @@
+@using ClientDependency.Core.Mvc
+
+@inherits System.Web.Mvc.WebViewPage<Umbraco.Forms.Mvc.Models.FormViewModel>
+<input type="hidden" id="fsConditions_@Model.FormClientId" value='@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.FieldsetConditions))' />
+<input type="hidden" id="fieldConditions_@Model.FormClientId" value='@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.FieldConditions))' />
+<input type="hidden" id="values_@Model.FormClientId" value='@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Pages.SelectMany(p => p.Fieldsets).SelectMany(fs => fs.Containers).SelectMany(c => c.Fields).ToDictionary(f => f.Id, f => f.Value)))' />
+<script data-umb-form="@Model.FormClientId" name="@Model.FormName.Replace(" ", "")"></script>
+<script type="text/javascript" src="~/content/components/monent/min/moment.min.js"></script>
+<script type="text/javascript" src="~/content/components/monent/locale/@(System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName).js"></script>
+<script>moment.locale('@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName');</script>
+<script type="text/javascript" src="~/App_Plugins/UmbracoForms/Assets/pikaday/pikaday.js"></script>
+@{
+    Html.RequiresJs("~/content/components/jquery-validate/dist/jquery.validate.js", 191)
+        .RequiresJs("~/content/components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js", 192)
+        .RequiresJs("~/content/components/jquery-validate-bootstrap/jquery.validate.bootstrap.js", 193);
+    Html
+        .RequiresJs("~/App_Plugins/UmbracoForms/Assets/umbracoforms.js", 202)
+        .RequiresJs("~/App_Plugins/UmbracoForms/Assets/umbracoforms-conditions.js", 203)
+        .RequiresJs("~/scripts/umbracoform.jquery.js", 404);
+}

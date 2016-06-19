@@ -1,0 +1,42 @@
+{
+    "propertyEditors": [
+        {
+            "id": "6F336D7E-198C-4B8A-BB1F-65A45BD197EA",
+            "name": "Char Limit",
+            "alias": "Our.Umbraco.CharLimit",
+            "isParameterEditor": true,
+            "editor": {
+                "view": "~/App_Plugins/CharLimit/charlimit.html",
+                "valueType": "TEXT"
+            },
+            "prevalues": {
+                "fields": [
+                    {
+                        "label": "Number of chars",
+                        "description": "Enter the number of chars to limit on",
+                        "key": "limit",
+                        "view": "number",
+                        "validation": [
+                            {
+                                "type": "Required"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Number of rows",
+                        "description": "Enter the number of rows",
+                        "key": "rows",
+                        "view": "number",
+                        "defaultValue": "3"
+                    }
+                ]
+            }
+        }
+    ],
+    "javascript": [
+        "~/app_plugins/charlimit/charlimit.controller.js"
+    ],
+    "css":[
+        "~/app_plugins/charlimit/charlimit.css"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "ClientName.Web",
+  "dependencies": {
+    "modernizr-built": "^3.2.0",
+    "jquery": "^2.1.4",
+    "bootstrap": "^3.3.5",
+    "jquery-validate": "^1.14.0",
+    "jquery-validation-unobtrusive": "^3.2.5",
+    "jquery-validate-bootstrap": "*",
+    "picturefill": "^3.0.1"
+  },
+  "resolutions": {
+    "jquery-validate": "^1.14.0",
+    "bootstrap": "^3.3.5"
+  }
+}

@@ -1,0 +1,36 @@
+﻿<div ng-controller="Our.GoogleMapsController" class="umb-editor umb-googlemaps">
+  <style>
+    .flex-row{
+      display: flex;
+      margin-top: 10px;
+    }
+    .address-city{
+      flew-grow: 1;
+    }
+    .flex-row label{
+      flex-shrink: 1;
+      min-width: 100px;
+    }
+    .flex-row input{
+      flex-grow: 2;
+      width: auto;
+      min-width: initial;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+    .flex-col{
+      min-width: 300px;
+    }
+
+    .pac-input{
+      margin-top: 10px;
+    }
+
+  </style>
+  <div class="dg-googlemaps" id="{{model.alias}}_canvas" style="height: 350px; max-width: 100%;"></div>
+  <input type="text" id="pac-input" class="pac-input umb-editor umb-textstring textstring" />
+</div>

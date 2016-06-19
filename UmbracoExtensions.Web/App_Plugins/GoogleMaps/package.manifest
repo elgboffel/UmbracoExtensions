@@ -1,0 +1,45 @@
+﻿{ 
+	/*you can define multiple editors*/ 
+	"propertyEditors": [ 
+    {
+			"name": "Google Maps",
+			"alias": "Our.GoogleMaps",
+			"editor": {
+				"view": "~/App_Plugins/GoogleMaps/googlemaps.editor.html",
+				"valueType": "JSON"
+			},
+			"prevalues": {
+				"fields": [
+          {
+              "label": "Preview",
+              "description": "Set startup location",
+              "key": "location",
+              "view": "~/App_Plugins/GoogleMaps/googlemaps.editor.html",
+              "validation": [
+                  {
+                      "type": "Required" 
+                  }                        
+              ]
+          },
+          {
+            "label": "Width",
+            "description": "",
+            "key": "width",
+						"view": "number"
+          },
+          {
+            "label": "Height",
+            "description": "",
+            "key": "height",
+						"view": "number",
+            "defaultValue": "450"
+          }
+				]
+			}
+		}
+	],
+	/*array of files we want to inject into the application on app_start*/
+	"javascript": [
+		"~/App_Plugins/GoogleMaps/googlemaps.controller.js"
+	]
+}

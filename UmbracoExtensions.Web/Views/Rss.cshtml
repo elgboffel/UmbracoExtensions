@@ -1,0 +1,6 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+    Response.AddHeader("Content-Type", "text/xml; charset=utf-8");
+    @Html.Partial("Shared/_Rss", Model)
+ }

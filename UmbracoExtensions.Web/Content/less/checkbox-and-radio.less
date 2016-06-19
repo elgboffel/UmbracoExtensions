@@ -1,0 +1,112 @@
+@import (reference) "../components/bootstrap/less/variables.less";
+
+.radio,
+.checkbox {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    label {
+        min-height: @line-height-computed;
+        padding-left: 42px;
+        margin-bottom: 0;
+        font-weight: normal;
+        cursor: pointer;
+        padding-bottom: 4px;
+    }
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 4px \9;
+    opacity: 0;
+    visibility: hidden;
+
+    + label {
+        &:before {
+            content: "";
+            position: absolute;
+            width: @line-height-computed;
+            height: @line-height-computed;
+            left: 0;
+            top: 0;
+            display: block;
+            transition: all ease-out .160s;
+        }
+    }
+}
+
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+    + label {
+        &:before {
+            border: 2px solid #aaa;
+            color: #aaa;
+            padding: 0;
+            width: @line-height-computed;
+            height: @line-height-computed;
+            font-size: 30px;
+            line-height: 6px;
+            text-indent: 1px;
+            text-shadow: 1px 1px #fff, -1px -1px #fff;
+        }
+
+        &:hover:before {
+            content: "\2713";
+            color: #aaa;
+            border-color: #aaa;
+        }
+    }
+
+    &:checked + label:before {
+        content: "\2713";
+        color: @brand-primary;
+        border-color: @brand-primary;
+    }
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"] {
+    + label {
+        &:before {
+            width: @line-height-computed;
+            height: @line-height-computed;
+            border: 2px solid #AAA;
+            border-radius: 50%;
+            background-color: #AAA;
+            box-shadow: inset 0 0 0 20px #fff;
+        }
+
+        &:hover:before {
+            background-color: #AAA;
+            box-shadow: inset 0 0 0 5px #fff;
+        }
+    }
+
+    &:checked + label:before {
+        background-color: @brand-primary;
+        box-shadow: inset 0 0 0 2px #fff;
+        border-color: @brand-primary;
+    }
+
+    &:disabled + label {
+        cursor: not-allowed;
+
+        &:before {
+            background-color: #fff;
+        }
+    }
+
+    &:checked:disabled + label:before {
+        background-color: #aaa;
+        box-shadow: inset 0 0 0 2px #fff;
+        border-color: #aaa;
+        cursor: not-allowed;
+    }
+}

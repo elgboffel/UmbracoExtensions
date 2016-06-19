@@ -1,0 +1,9 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{ 
+    var archetype = Model.GetPropertyValue<Archetype.Models.ArchetypeModel>("codes", true);
+}
+@foreach(var fieldset in archetype.Fieldsets)
+{
+    <!-- @(fieldset.GetValue<string>("title")) -->
+    @Html.Raw(fieldset.GetValue<string>("code"))
+}

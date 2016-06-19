@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@*
+    This file is part of MacroDataTypes, for use with the rte-editor
+*@
+@using Umbraco.Web.Templates;
+@{
+    int imageId = Model.MacroParameters.GetValue<int>("image", 0);
+    var bodyText = TemplateUtilities.ParseInternalLinks(HttpUtility.HtmlDecode(Model.MacroParameters.GetValue("bodytext", string.Empty)));
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">@(Model.MacroParameters.GetValue<string>("headline"), "")</h3>
+    </div>
+    <div class="panel-body">
+        <h4></h4>
+        @if (imageId != 0)
+        {
+            IPublishedContent image = Umbraco.TypedMedia(imageId);
+            <img class="img-responsive" src="@image.GetCropUrl(width: 786)" alt="@image.GetPropertyValue("alt", image.Name)" />
+        }
+        @Html.Raw(bodyText)
+    </div>
+</div>

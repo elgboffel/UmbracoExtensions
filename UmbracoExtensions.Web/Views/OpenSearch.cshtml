@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<?xml version="1.0" encoding="UTF-8"?>
+@{
+    Layout = null;
+	Response.ContentType = "text/xml";
+	IPublishedContent root = Model.Content.Ancestor("Domain");
+}
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>@root.Name</ShortName>
+  @Html.Raw("<link>")@Model.Content.GetPropertyValue("Link")@Html.Raw("</link>")
+  <Description>@Model.Content.GetPropertyValue("Description")</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Url method="get" type="text/html" 
+      template="@root.AbsoluteUrl()/search?q={searchTerms}"/>
+</OpenSearchDescription>
+	
